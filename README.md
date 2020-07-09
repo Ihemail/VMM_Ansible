@@ -421,4 +421,9 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
   localhost                  : ok=17   changed=15   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
   ```
   
-  5. Close all Terminal app window once work is complete.
+4. Similar login only Ansible Script for Server console & ssh to QFX/MX nodes:
+  ```ruby
+  MacOS:ansible xxxx$ ansible-playbook vmm-base.yaml
+  ```
+  
+5. Close all Terminal app window once work is complete.
