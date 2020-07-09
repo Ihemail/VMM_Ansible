@@ -15,8 +15,6 @@ vmm start vm_command
 vmm start vm_cc
 vmm start vm_cc2
 vmm start vm_app
-#vmm start vm_compute1
-#vmm start vm_compute2
 #vmm start vm_openwrt
 vmm start vqfx10k_spine1
 vmm start vqfx10k_spine1_cosim
@@ -106,32 +104,6 @@ config \"contrail_CEM\" {
     interface \"em0\" { bridge \"external\"; };
     interface \"em1\" { bridge \"spine1p1\"; };
     interface \"em2\" { bridge \"leaf1p2\"; };
-    interface \"em3\" { bridge \"leaf2p3\"; };
-  };
-
-  vm \"vm_compute1\" {
-    hostname \"vm_compute1\";
-    CENTOS7_base
-    ncpus 8;
-    memory 8192;
-    setvar \"+qemu_args\" \"-cpu qemu64,+vmx\";
-    setvar \"boot_noveriexec\"       \"yes\";
-    interface \"em0\" { bridge \"external\"; };
-    interface \"em1\" { bridge \"spine1p1\"; };
-    interface \"em2\" { bridge \"leaf1p2\"; };
-    interface \"em3\" { bridge \"leaf2p3\"; };
-  };
-
-  vm \"vm_compute2\" {
-    hostname \"vm_compute2\";
-    CENTOS7_base
-    ncpus 8;
-    memory 8192;
-    setvar \"+qemu_args\" \"-cpu qemu64,+vmx\";
-    setvar \"boot_noveriexec\"       \"yes\";
-    interface \"em0\" { bridge \"external\"; };
-    interface \"em1\" { bridge \"spine1p1\"; };
-    interface \"em2\" { bridge \"leaf2p2\"; };
     interface \"em3\" { bridge \"leaf2p3\"; };
   };
 
