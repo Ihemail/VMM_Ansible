@@ -389,12 +389,6 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
   TASK [console: vm_app] *****************************************************************************************
   changed: [localhost]
 
-  TASK [console: vm_compute1] ************************************************************************************
-  changed: [localhost]
-
-  TASK [console: vm_compute2] ************************************************************************************
-  changed: [localhost]
-
   TASK [console: vm_openWRT_VMM_Pod] *****************************************************************************
   changed: [localhost]
 
@@ -418,10 +412,12 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
 
 
   PLAY RECAP *****************************************************************************************************
-  localhost                  : ok=17   changed=15   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+  localhost                  : ok=15   changed=13   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
   ```
-  
+
+
 4. Similar login only Ansible Script for Server console & ssh to vQFX/vMX nodes:
+
   ```ruby
   MacOS:ansible xxxx$ ansible-playbook vmm-base.yaml
   ```
