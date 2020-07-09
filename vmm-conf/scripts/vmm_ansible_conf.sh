@@ -12,7 +12,7 @@ vmm config homes/vmm-ansible.conf -g vmm-default
 echo " VMM Redeploy - Done "
 vmm start vm_deployer_cc
 vmm start vm_command
-vmm start vm_cc
+vmm start vm_cc1
 vmm start vm_cc2
 vmm start vm_app
 #vmm start vm_openwrt
@@ -69,8 +69,8 @@ config \"contrail_CEM\" {
     interface \"em2\" { bridge \"leaf1p2\"; };
   };
 
-  vm \"vm_cc\" {
-    hostname \"vm_cc\";
+  vm \"vm_cc1\" {
+    hostname \"vm_cc1\";
     CENTOS7_base
     ncpus 20;
     memory 40000;
