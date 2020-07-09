@@ -1,4 +1,4 @@
-# VMM_Ansible
+# VMM_CONF_file_Deployment_via_Ansible-Playbooks
 
 Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell in VMM Pod. 
 
