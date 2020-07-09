@@ -63,16 +63,8 @@
       command: osascript -e 'tell app "Terminal" to activate' -e 'tell app "System Events" to tell process "Terminal" to keystroke "t" using command down' -e 'delay 2' -e 'tell app "Terminal" to do script ("ssh {{ vmm_list[servername] }}") in tab 5 of window 1' -e 'delay 4' -e 'tell app "Terminal" to do script ("vmm serial -t vm_app \nroot") in tab 5 of window 1' -e 'delay 4' -e 'tell app "Terminal" to do script ("contrail123\n ifconfig") in tab 5 of window 1' -e 'tell app "Terminal" to set custom title of tab 5 of window 1 to "::vm_app::"'
       async: 30
       poll: 0
-    - name: "console: vm_compute1"  
-      command: osascript -e 'tell app "Terminal" to activate' -e 'tell app "System Events" to tell process "Terminal" to keystroke "t" using command down' -e 'delay 2' -e 'tell app "Terminal" to do script ("ssh {{ vmm_list[servername] }}") in tab 6 of window 1' -e 'delay 4' -e 'tell app "Terminal" to do script ("vmm serial -t vm_compute1 \nroot") in tab 6 of window 1' -e 'delay 4' -e 'tell app "Terminal" to do script ("contrail123\n ifconfig") in tab 6 of window 1' -e 'tell app "Terminal" to set custom title of tab 6 of window 1 to "::vm_compute1::"'
-      async: 30
-      poll: 0
-    - name: "console: vm_compute2"  
-      command: osascript -e 'tell app "Terminal" to activate' -e 'tell app "System Events" to tell process "Terminal" to keystroke "t" using command down' -e 'delay 2' -e 'tell app "Terminal" to do script ("ssh {{ vmm_list[servername] }}") in tab 7 of window 1' -e 'delay 4' -e 'tell app "Terminal" to do script ("vmm serial -t vm_compute2 \nroot") in tab 7 of window 1' -e 'delay 4' -e 'tell app "Terminal" to do script ("contrail123\n ifconfig") in tab 7 of window 1' -e 'tell app "Terminal" to set custom title of tab 7 of window 1 to "::vm_compute2::"'
-      async: 30
-      poll: 0
     - name: "console: vm_openWRT_VMM_Pod"  
-      command: osascript -e 'tell app "Terminal" to activate' -e 'tell app "System Events" to tell process "Terminal" to keystroke "t" using command down' -e 'delay 2' -e 'tell app "Terminal" to do script ("ssh {{ vmm_list[servername] }}") in tab 10 of window 1' -e 'delay 4' -e 'tell app "Terminal" to do script ("vmm ip \n") in tab 10 of window 1' -e 'delay 4' -e 'tell app "Terminal" to set custom title of tab 10 of window 1 to "::vmm_IP::"'
+      command: osascript -e 'tell app "Terminal" to activate' -e 'tell app "System Events" to tell process "Terminal" to keystroke "t" using command down' -e 'delay 2' -e 'tell app "Terminal" to do script ("ssh {{ vmm_list[servername] }}") in tab 6 of window 1' -e 'delay 4' -e 'tell app "Terminal" to do script ("vmm ip \n") in tab 6 of window 1' -e 'delay 4' -e 'tell app "Terminal" to set custom title of tab 6 of window 1 to "::vmm_IP::"'
       async: 30
       poll: 0
 
