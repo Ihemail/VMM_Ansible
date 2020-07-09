@@ -28,8 +28,8 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
  16          p8: userid@q-pod26-vmm.englab.juniper.net
  17          p9:
  18          p10:
-
   ```
+  
 5. Exit from VMM Pod and execute the ansible-playbook:
   
   ```ruby
