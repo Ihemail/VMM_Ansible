@@ -97,7 +97,7 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
   changed: [localhost] => (item=  vm \"vm_command\" {)
   changed: [localhost] => (item=    hostname \"vm_command\";)
   changed: [localhost] => (item=    CENTOS7_base)
-  changed: [localhost] => (item=    ncpus 16;)
+  changed: [localhost] => (item=    ncpus 12;)
   changed: [localhost] => (item=    memory 16384;)
   changed: [localhost] => (item=    setvar \"+qemu_args\" \"-cpu qemu64,+vmx\";)
   changed: [localhost] => (item=    setvar \"boot_noveriexec\"       \"yes\";)
@@ -109,7 +109,7 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
   changed: [localhost] => (item=  vm \"vm_cc\" {)
   changed: [localhost] => (item=    hostname \"vm_cc\";)
   changed: [localhost] => (item=    CENTOS7_base)
-  changed: [localhost] => (item=    ncpus 28;)
+  changed: [localhost] => (item=    ncpus 20;)
   changed: [localhost] => (item=    memory 40000;)
   changed: [localhost] => (item=    setvar \"+qemu_args\" \"-cpu qemu64,+vmx\";)
   changed: [localhost] => (item=    setvar \"boot_noveriexec\"       \"yes\";)
@@ -122,7 +122,7 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
   changed: [localhost] => (item=  vm \"vm_cc2\" {)
   changed: [localhost] => (item=    hostname \"vm_cc2\";)
   changed: [localhost] => (item=    CENTOS7_base)
-  changed: [localhost] => (item=    ncpus 28;)
+  changed: [localhost] => (item=    ncpus 20;)
   changed: [localhost] => (item=    memory 40000;)
   changed: [localhost] => (item=    setvar \"+qemu_args\" \"-cpu qemu64,+vmx\";)
   changed: [localhost] => (item=    setvar \"boot_noveriexec\"       \"yes\";)
@@ -307,7 +307,7 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
   changed: [localhost] => (item=chmod +x homes/reset-ansible.sh)
   changed: [localhost] => (item= ./homes/reset-ansible.sh)
 
-  TASK [console: delay for 360sec] *******************************************************************************
+  TASK [console: delay for 300sec] *******************************************************************************
   ok: [localhost]
 
   TASK [console: vmm_server_conf_deploy_3] ***********************************************************************
