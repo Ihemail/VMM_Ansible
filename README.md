@@ -6,7 +6,7 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
   ```ruby
   MacOS:~ $ ssh-copy-id -i ~/.ssh/id_rsa.pub userid@q-pod13-vmm.englab.juniper.net
   ```
-2. Login to any vmm Quincy Pod, and verify password less ssh login.
+2. Login to any vmm Quincy Pod, and verify passwordless ssh login.
 3. Create a folder named 'homes' in your vmm Quincy Pod Home directory:
   ```ruby
   [xxxx@q-pod13-vmm ~]$ mkdir homes
