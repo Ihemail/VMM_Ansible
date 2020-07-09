@@ -3,15 +3,14 @@
 Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell in VMM Pod. 
 
 1. Copy SSH Key to any Quincy Pod:
-  
-  ```MacOS:~ $ ssh-copy-id -i ~/.ssh/id_rsa.pub ihazra@wf-pod01-vmm.englab.juniper.net```
-
-
+  ```ruby
+  MacOS:~ $ ssh-copy-id -i ~/.ssh/id_rsa.pub ihazra@wf-pod01-vmm.englab.juniper.net
+  ```
 2. Login to any vmm Quincy Pod, and verify password less ssh login.
 3. Create a folder named 'homes' in your vmm Quincy Pod Home directory:
-
-  ```[xxxx@q-pod13-vmm ~]$ mkdir homes```
-
+  ```ruby
+  [xxxx@q-pod13-vmm ~]$ mkdir homes
+  ```
 4. Exit from VMM Pod and execute the ansible-playbook:
   
   ```ruby
@@ -396,12 +395,6 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
   TASK [console: vm_compute2] ************************************************************************************
   changed: [localhost]
 
-  TASK [console: vm_bms1] ****************************************************************************************
-  changed: [localhost]
-
-  TASK [console: vm_bms2] ****************************************************************************************
-  changed: [localhost]
-
   TASK [console: vm_openWRT_VMM_Pod] *****************************************************************************
   changed: [localhost]
 
@@ -425,7 +418,7 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
 
 
   PLAY RECAP *****************************************************************************************************
-  localhost                  : ok=19   changed=17   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+  localhost                  : ok=17   changed=15   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
   ```
   
   5. Close all Terminal app window once work is complete.
