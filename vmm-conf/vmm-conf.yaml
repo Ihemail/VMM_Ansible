@@ -6,14 +6,14 @@
     - vmm_ansible_conf_sh: "{{ lookup('file', 'scripts/vmm_ansible_conf.sh').splitlines() }}"
     - vmm_commands_1_sh: "{{ lookup('file', 'scripts/vmm_commands_1.sh').splitlines() }}"
     - vmm_list:
-        p1: ihazra@q-pod05-vmm.englab.juniper.net
-        p2: ihazra@q-pod08-vmm.englab.juniper.net
-        p3: ihazra@q-pod13-vmm.englab.juniper.net
-        p4: ihazra@q-pod23-vmm.englab.juniper.net
-        p5: ihazra@wf-pod01-vmm.englab.juniper.net
-        p6: ihazra@q-pod21-vmm.englab.juniper.net
-        p7: ihazra@q-pod22-vmm.englab.juniper.net
-        p8: ihazra@q-pod26-vmm.englab.juniper.net
+        p1: userid@q-pod05-vmm.englab.juniper.net
+        p2: userid@q-pod08-vmm.englab.juniper.net
+        p3: userid@q-pod13-vmm.englab.juniper.net
+        p4: userid@q-pod23-vmm.englab.juniper.net
+        p5: userid@wf-pod01-vmm.englab.juniper.net
+        p6: userid@q-pod21-vmm.englab.juniper.net
+        p7: userid@q-pod22-vmm.englab.juniper.net
+        p8: userid@q-pod26-vmm.englab.juniper.net
         p9:
         p10:
   vars_prompt:
@@ -23,7 +23,6 @@
       private: no
 
   tasks:
-#    ssh-copy-id -i ~/.ssh/id_rsa.pub ihazra@wf-pod01-vmm.englab.juniper.net
     - name: "console: vmm_server_conf_deploy_1"  
       command: osascript -e 'tell app "Terminal" to activate' -e 'delay 2' -e 'tell app "Terminal" to do script ("ssh {{ vmm_list[servername] }}") in tab 1 of window 1' -e 'delay 4' -e 'tell app "Terminal" to set custom title of tab 1 of front window to "::vmm_conf_deployer::"'
       async: 30
