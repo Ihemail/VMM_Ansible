@@ -11,7 +11,7 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
   ```ruby
   [xxxx@q-pod13-vmm ~]$ mkdir homes
   ```
-6. Open test editor and modify the `vmm-conf.yaml` file with your own userid:
+4. Open test editor and modify the `vmm-conf.yaml` file with your own userid:
 
   ```ruby
   5    vars:
@@ -376,10 +376,10 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
   ```
 
 
-4. Similar login only Ansible Script for Server console & ssh to vQFX/vMX nodes:
+6. Similar login only Ansible Script for Server console & ssh to vQFX/vMX nodes:
 
   ```ruby
   MacOS:ansible xxxx$ ansible-playbook vmm-base.yaml
   ```
   
-5. Close all Terminal app window once work is complete.
+7. Close all Terminal app window once work is complete.
