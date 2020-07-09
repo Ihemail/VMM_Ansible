@@ -2,12 +2,10 @@ echo \"vmm_ansible_conf\"
 cat << EOF > homes/reset-ansible.sh
 #!/bin/bash
 echo -n "" > ~/.ssh/known_hosts
-/vmm/bin/vmm_capacity -g vmm-default
 vmm ip
 vmm stop
 vmm unbind
 vmm config homes/vmm-clean.conf -g vmm-default
-/vmm/bin/vmm_capacity -g vmm-default
 echo "Sleep for 5sec."
 sleep 5
 vmm config homes/vmm-ansible.conf -g vmm-default
@@ -30,7 +28,6 @@ vmm start vqfx10k_leaf2
 vmm start vqfx10k_leaf2_cosim
 #vmm start vmx_gw
 #vmm start vmx_gw_MPC0
-/vmm/bin/vmm_capacity -g vmm-default
 vmm ip
               
 EOF
