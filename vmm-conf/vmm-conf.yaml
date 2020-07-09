@@ -24,7 +24,6 @@
 
   tasks:
 #    ssh-copy-id -i ~/.ssh/id_rsa.pub ihazra@wf-pod01-vmm.englab.juniper.net
-
     - name: "console: vmm_server_conf_deploy_1"  
       command: osascript -e 'tell app "Terminal" to activate' -e 'delay 2' -e 'tell app "Terminal" to do script ("ssh {{ vmm_list[servername] }}") in tab 1 of window 1' -e 'delay 4' -e 'tell app "Terminal" to set custom title of tab 1 of front window to "::vmm_conf_deployer::"'
       async: 30
@@ -72,12 +71,7 @@
       command: osascript -e 'tell app "Terminal" to activate' -e 'tell app "System Events" to tell process "Terminal" to keystroke "t" using command down' -e 'delay 2' -e 'tell app "Terminal" to do script ("ssh {{ vmm_list[servername] }}") in tab 7 of window 1' -e 'delay 4' -e 'tell app "Terminal" to do script ("vmm serial -t vm_compute2 \nroot") in tab 7 of window 1' -e 'delay 4' -e 'tell app "Terminal" to do script ("contrail123\n ifconfig") in tab 7 of window 1' -e 'tell app "Terminal" to set custom title of tab 7 of window 1 to "::vm_compute2::"'
       async: 30
       poll: 0
-##    - name: "console: vm_openwrt"  
-##      command: osascript -e 'tell app "Terminal" to activate' -e 'tell app "System Events" to tell process "Terminal" to keystroke "t" using command down' -e 'delay 2' -e 'tell app "Terminal" to do script ("ssh {{ vmm_list[servername] }}") in tab 10 of window 1' -e 'delay 4' -e 'tell app "Terminal" to do script ("vmm serial -t vm_openwrt \n") in tab 10 of window 1' -e 'delay 4' -e 'tell app "Terminal" to do script ("ifconfig \n") in tab 10 of window 1' -e 'tell app "Terminal" to set custom title of tab 10 of window 1 to "::vm_openwrt::"'
-##      async: 30
-##      poll: 0
     - name: "console: vm_openWRT_VMM_Pod"  
-##      command: osascript -e 'delay 20'
       command: osascript -e 'tell app "Terminal" to activate' -e 'tell app "System Events" to tell process "Terminal" to keystroke "t" using command down' -e 'delay 2' -e 'tell app "Terminal" to do script ("ssh {{ vmm_list[servername] }}") in tab 10 of window 1' -e 'delay 4' -e 'tell app "Terminal" to do script ("vmm ip \n") in tab 10 of window 1' -e 'delay 4' -e 'tell app "Terminal" to set custom title of tab 10 of window 1 to "::vmm_IP::"'
       async: 30
       poll: 0
@@ -87,7 +81,6 @@
         prompt: "\nContinue to QFX login (y/n)"
       register: check1
     - name: "ssh: vqfx10k_spine1"  
- #     debug: msg='echo {{ check1.user_input }}'
       command: osascript -e 'tell app "Terminal"' -e 'set currentTab to do script ("ssh {{ vmm_list[servername] }}")' -e 'delay 4' -e 'do script ("ssh -o \"StrictHostKeyChecking no\" root@`vmm ip | grep \"vqfx10k_spine1 \" | awk '\''{print $2}'\''`") in currentTab' -e 'delay 5' -e 'do script ("Embe1mpls\n cli") in currentTab' -e 'end tell' -e 'tell app "Terminal" to set custom title of tab 1 of front window to "::vqfx10k_spine1::"'
       async: 30
       poll: 0
