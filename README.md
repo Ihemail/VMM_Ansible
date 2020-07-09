@@ -421,7 +421,7 @@ Note: Ansible Playbooks are customized to run from MacOS only & for tcsh shell i
   localhost                  : ok=17   changed=15   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
   ```
   
-4. Similar login only Ansible Script for Server console & ssh to QFX/MX nodes:
+4. Similar login only Ansible Script for Server console & ssh to vQFX/vMX nodes:
   ```ruby
   MacOS:ansible xxxx$ ansible-playbook vmm-base.yaml
   ```
