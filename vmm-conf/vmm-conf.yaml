@@ -14,17 +14,17 @@
         p6: userid@q-pod21-vmm.englab.juniper.net
         p7: userid@q-pod22-vmm.englab.juniper.net
         p8: userid@q-pod26-vmm.englab.juniper.net
-        p9:
+        p9: userid@svpod1-vmm.englab.juniper.net
         p10:
   vars_prompt:
     - name: servername
-      prompt: "VMM Pod Name: \n p1 : q-pod05-vmm.englab.juniper.net \n p2 : q-pod08-vmm.englab.juniper.net \n p3 : q-pod13-vmm.englab.juniper.net \n p4 : q-pod23-vmm.englab.juniper.net \n p5 : wf-pod01-vmm.englab.juniper.net \n p6 : q-pod21-vmm.englab.juniper.net \n p7 : q-pod22-vmm.englab.juniper.net \n p8 : q-pod26-vmm.englab.juniper.net \n p9 :  \n p10 :  \nSelect VMM Pod "
+      prompt: "VMM Pod Name: \n p1 : q-pod05-vmm.englab.juniper.net \n p2 : q-pod08-vmm.englab.juniper.net \n p3 : q-pod13-vmm.englab.juniper.net \n p4 : q-pod23-vmm.englab.juniper.net \n p5 : wf-pod01-vmm.englab.juniper.net \n p6 : q-pod21-vmm.englab.juniper.net \n p7 : q-pod22-vmm.englab.juniper.net \n p8 : q-pod26-vmm.englab.juniper.net \n p9 : svpod1-vmm.englab.juniper.net \n p10 :  \nSelect VMM Pod "
       register: prompt_servername
       private: no
 
   tasks:
     - name: "console: vmm_server_conf_deploy_1"  
-      command: osascript -e 'tell app "Terminal" to activate' -e 'delay 2' -e 'tell app "Terminal" to do script ("ssh {{ vmm_list[servername] }}") in tab 1 of window 1' -e 'delay 4' -e 'tell app "Terminal" to set custom title of tab 1 of front window to "::vmm_conf_deployer::"'
+      command: osascript -e 'tell app "Terminal" to activate' -e 'delay 2' -e 'tell app "Terminal" to do script ("ssh {{ vmm_list[servername] }}") in tab 1 of window 1' -e 'delay 7' -e 'tell app "Terminal" to set custom title of tab 1 of front window to "::vmm_conf_deployer::"'
       async: 30
       poll: 0
     - name: "console: vmm_server_conf_deploy_2" 
